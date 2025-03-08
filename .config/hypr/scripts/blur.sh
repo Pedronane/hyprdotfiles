@@ -1,16 +1,11 @@
-#!/usr/bin/env sh
-HYPRGAMEMODE=$(hyprctl getoption decoration:blur:enabled | awk 'NR==1{print $2}')
-if [ "$HYPRGAMEMODE" = 1 ] ; then
-    hyprctl --batch "\
-        keyword decoration:blur:enabled true;\
-        keyword decoration:blur:size 1;\
-    "
-    exit
+#!/usr/bin/env bash
+
+PASSES=$(hyprctl -j getoption decoration:blur:passes | jq ".int")
+
+if [ "${PASSES}" == "3" ]; then
+    hyprctl keyword decoration:blur:size 2
+    hyprctl keyword decoration:blur:passes 0
 else
-    hyprctl --batch "\
-        keyword decoration:blur:enabled true;\
-        keyword decoration:blur:size 5;\
-    "
-    exit
+    hyprctl keyword decoration:blur:size 2
+    hyprctl keyword decoration:blur:passes 3
 fi
-hyprctl reload

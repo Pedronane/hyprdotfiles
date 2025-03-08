@@ -1,3 +1,5 @@
+require("remap")
+require("set")
 -- Path for lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -11,9 +13,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-vim.cmd("set number")
-require("vim-options")
 require("lazy").setup("plugins")
 require("mason").setup()
 require("mason-lspconfig").setup()
-vim.opt.termguicolors = true
