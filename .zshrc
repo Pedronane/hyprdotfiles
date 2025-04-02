@@ -115,6 +115,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+alias jcompile="~/Scripts/compileJava.sh"
+
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd  zsh)"
 
