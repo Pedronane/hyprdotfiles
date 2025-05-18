@@ -30,26 +30,26 @@ window#waybar{
 }
 tooltip {
     background:@background;
-    color: @color7;
+    color: @color9;
 }
 #clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
     transition: all .3s ease;
-    color:@color9;
+    color:@color10;
 }
 #custom-notification {
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@color9;
 }
 #clock{
     padding: 0px 5px;
-    color:@color7;
+    color:@color9;
     transition: all .3s ease;
 }
 #custom-pacman{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@color9;
 
 }
 #workspaces {
@@ -91,19 +91,19 @@ tooltip {
 #bluetooth{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@color9;
 
 }
 #network{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@color9;
 
 }
 #battery{
     padding: 0px 5px;
     transition: all .3s ease;
-    color:@color7;
+    color:@color9;
 
 
 }
@@ -143,7 +143,7 @@ tooltip {
 #cpu,#memory,#temperature{
     padding: 0px 5px;
     transition: all .3s ease; 
-    color:@color7;
+    color:@color9;
 
 }
 #custom-endpoint{

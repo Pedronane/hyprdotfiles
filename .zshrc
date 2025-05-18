@@ -1,16 +1,10 @@
-
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-_fix_cursor() {
-   echo -ne '\e[1 q'
-}
+#_fix_cursor() {
+#   echo -ne '\e[5 q'
+#}
 
-precmd_functions+=(_fix_cursor)
-
-# Autostart tmux
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
+#precmd_functions+=(_fix_cursor)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -19,7 +13,7 @@ fi
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+#CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -82,11 +76,11 @@ plugins=(git)
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -103,7 +97,8 @@ plugins=(git)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-
+alias vi="nvim"
+alias vim="nvim"
 alias jcompile="~/Scripts/compileJava.sh"
 
 eval "$(starship init zsh)"
