@@ -30,3 +30,13 @@ chsh -s /usr/bin/zsh
 
 #Copy dotfiles
 stow .
+
+# Tmux plugins
+rm -rf $HOME/.config/tmux/plugins/*
+
+# Reload Tmux conf
+tmux source-file ~/.tmux.conf
+
+# Install tmux plugins
+~/.tmux/plugins/tpm/bin/install_plugins
+
