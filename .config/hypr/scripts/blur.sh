@@ -12,10 +12,10 @@ elif [ "${PASSES}" == "0" ]; then
     hyprctl keyword decoration:blur:size 2
     hyprctl keyword decoration:blur:passes 3
 else
+    hyprctl keyword decoration:active_opacity 1.0
+    hyprctl keyword decoration:inactive_opacity 1.0
     hyprctl keyword decoration:blur:enabled false
     hyprctl keyword decoration:blur:size 0
     hyprctl keyword decoration:blur:passes 7
-    hyprctl keyword decoration:active_opacity 1.0
-    hyprctl keyword decoration:inactive_opacity 1.0
 fi
 
