@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_DIR="$HOME/Pictures/wallpapers/"
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers/"
 
 menu() {
   find "${WALLPAPER_DIR}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) | awk '{print "img:"$0}'
