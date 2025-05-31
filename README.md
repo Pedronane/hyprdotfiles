@@ -8,3 +8,6 @@ git clone https://github.com/Pedronane/dotfiles
 cd dotfiles
 ./Scripts/install.sh
 ```
+
+After that you can download my tmux plugins by opening tmux and pressing:
+`ctrl+space+I`
