@@ -9,7 +9,7 @@ menu() {
 main() {
 
   # Choice menu
-  choice=$(menu | wofi -c ~/.config/wofi/config1 -s ~/.config/wofi/style1.css --show dmenu --prompt "Select Wallpaper:" -n)
+  choice=$(menu | wofi -c ~/.config/wofi/wallpaper -s ~/.config/wofi/style-wallpaper.css --show dmenu --prompt "Select Wallpaper:" -n)
 
   # Change wallpaper and apply color scheme
   selected_wallpaper=$(echo "$choice" | sed 's/^img://')
