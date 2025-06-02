@@ -19,7 +19,6 @@ main() {
   swaync-client --reload-css
   ~/.config/waybar/refresh.sh
   cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
-  pywalfox update
 
   color1=$(awk 'match($0, /color2=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)
   color2=$(awk 'match($0, /color3=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)
