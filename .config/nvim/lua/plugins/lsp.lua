@@ -99,15 +99,17 @@ return {
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
+            virtual_text = {
+                prefix = "●", -- or "■", "◆", ecc.
+                spacing = 4,
+            },
+            signs = true,
+            underline = true,
+            update_in_insert = true,
+            severity_sort = true,
             float = {
-                focusable = false,
-                style = "minimal",
                 border = "rounded",
                 source = "always",
-                header = "",
-                prefix = "",
             },
-        })
-    end
+        })    end
 }
