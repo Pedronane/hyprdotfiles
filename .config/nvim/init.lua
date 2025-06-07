@@ -12,6 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         lazypath,
     })
 end
+vim.o.conceallevel = 1
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("mason").setup()
