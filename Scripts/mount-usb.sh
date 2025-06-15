@@ -1,32 +1,28 @@
 #!/bin/bash
+set -x
 
-# Ottieni la lista delle USB collegate usando lsblk e filtra solo i dispositivi rimovibili (RM=1)
-devices=$(lsblk -o NAME,RM,SIZE,MODEL,MOUNTPOINT -nr | awk '$2 == 1 {print "/dev/" $1 " - " $3 " - " $4}')
+devices=$(lsblk -o NAME,RM,TYPE,SIZE,MODEL -nr | awk '$2 == 1 && $3 == "part" {print "/dev/" $1 " - " $4 " - " $5}')
 
-# Mostra la lista con wofi
-selected=$(echo "$devices" | wofi --dmenu --prompt "Seleziona una USB da montare")
+selected=$(echo "$devices" | wofi --dmenu --prompt "Select a USB drive to mount")
 
-# Controlla se l'utente ha annullato
 [ -z "$selected" ] && exit 1
 
-# Estrai il nome del dispositivo (es. /dev/sdb1)
 device=$(echo "$selected" | awk '{print $1}')
 
-# Controlla se il dispositivo ha partizioni
-if [[ ! -b "$device" ]]; then
-    notify-send "Errore" "Dispositivo non valido: $device"
-    exit 1
-fi
+mount_location=$(echo -e "$HOME/Media\n/mnt" | wofi --dmenu --prompt "Mount location?")
 
-# Crea una cartella di mount se non esiste
-mount_point="/mnt/usb-$(basename "$device")"
+[ -z "$mount_location" ] && exit 1
+
+mount_point="$mount_location/usb-$(basename "$device")"
+
 sudo mkdir -p "$mount_point"
 
-# Monta il dispositivo
 if mount | grep -q "$device"; then
-    notify-send "USB già montata" "$device è già montato."
+    sudo umount "$device" "$mount_point" && \
+    notify-send "USB unmounted" "$device unmounted" || \
+    notify-send "Error" "Failed to unmount $device"
 else
     sudo mount "$device" "$mount_point" && \
-    notify-send "USB montata" "$device montato in $mount_point" || \
-    notify-send "Errore" "Impossibile montare $device"
+    notify-send "USB mounted" "$device mounted at $mount_point" || \
+    notify-send "Error" "Failed to mount $device"
 fi

@@ -16,5 +16,7 @@ eval "$(zoxide init --cmd cd  zsh)"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
+
+export QT_QPA_PLATFORMTHEME=qt5ct

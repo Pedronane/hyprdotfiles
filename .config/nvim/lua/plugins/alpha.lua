@@ -57,7 +57,7 @@ return {
             dashboard.button( "f", "󰱼  > Find file", ":lua require('telescope.builtin').find_files({ find_command = { 'rg', '--files' } })<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
             dashboard.button( "o", "󱞁  > Obsidian" , ":e ~/Appunti/Home.md<CR>"),
-            dashboard.button( "O", "󱞁  > Obsidian" , ":cd ~/Appunti | Telescope find_files<CR>"),
+            dashboard.button( "O", "󱞁  > Obsidian search" , ":cd ~/Appunti | Telescope find_files<CR>"),
             dashboard.button( "c", "  > Config" , ":cd ~/.config/nvim | Telescope find_files<CR>"),
             dashboard.button( "h", "  > Settings" , ":cd ~/.config/hypr | Telescope find_files<CR>"),
             dashboard.button( "q", "  > Quit", ":qa<CR>"),
