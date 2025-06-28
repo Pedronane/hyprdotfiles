@@ -13,7 +13,8 @@
 
 * {
     all:unset;
-    font-family: '0xProto Nerd Font Mono', monospace;
+    font-family: 'Maple Mono NF CN', monospace;
+    font-style: italic;
     font-size: 18px;
     outline: none;
     border: none;
