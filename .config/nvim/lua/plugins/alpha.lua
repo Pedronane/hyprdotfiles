@@ -53,7 +53,6 @@ return {
         dashboard.section.header.opts.hl = "AlphaHeader"
 
         dashboard.section.buttons.val = {
-            dashboard.button( "n", "  > New file" , ":ene <BAR> startinsert <CR>"),
             dashboard.button( "f", "󰱼  > Find file", ":lua require('telescope.builtin').find_files({ find_command = { 'rg', '--files' } })<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
             dashboard.button( "o", "󱞁  > Obsidian" , ":e ~/Appunti/Home.md<CR>"),
@@ -63,13 +62,6 @@ return {
             dashboard.button( "q", "  > Quit", ":qa<CR>"),
         }
 
-        dashboard.section.footer.val = {
-            "",
-            "󰊠 Welcome to Neovim",
-            ""
-        }
-        dashboard.section.footer.opts.position = "center"
-
         dashboard.config.layout = {
             { type = "padding", val = 5 },
             dashboard.section.header,
@@ -77,8 +69,6 @@ return {
             dashboard.section.clock,
             { type = "padding", val = 3 },
             dashboard.section.buttons,
-            { type = "padding", val = 1 },
-            dashboard.section.footer,
         }
 
         alpha.setup(dashboard.config)

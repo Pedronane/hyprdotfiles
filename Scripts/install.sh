@@ -15,7 +15,7 @@ rm -rf yay
 git clone https://github.com/Pedronane/Wallpapers $HOME/Pictures/Wallpapers
 
 # Install compositor and utilities
-yay --noconfirm -S hyprland waybar wofi swaync-client imv hypridle hyprpicker hyprlock grimblast wlogout brightnessctl nwg-look blueman bluez cliphist libnotify xdg-desktop-portal-hyprland hyprpolkitagent ttf-0xproto-nerd otf-codenewroman-nerd noto-fonts-cjk qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g zathura sddm themix-full-git
+yay --noconfirm -S hyprland waybar wofi swaync-client imv hypridle hyprpicker hyprlock grimblast wlogout brightnessctl nwg-look blueman bluez cliphist libnotify xdg-desktop-portal-hyprland hyprpolkitagent yay -S maplemono-nf-cn qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g zathura sddm # themix-full-git 
 
 # Install terminal stuff
 yay --noconfirm -S starship neovim fd cava stow tmux zsh kitty yazi ripgrep fzf bat zoxide unzip fastfetch yarn man-db mpd rmpc
@@ -34,6 +34,10 @@ systemctl --user start pipewire.service pipewire-pulse.service
 # Enable display manager
 sudo systemctl enable sddm.service
 
+# Install sddm theme
+git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM && cd SilentSDDM && ./install.sh
+rm -rf SilentSDDM
+
 # Enable mpd
 sudo systemctl enable mpd
 
@@ -45,3 +49,11 @@ stow .
 
 # Remove empty tmux plugins folders
 rm -rf $HOME/.confing/tmux/plugins/*
+
+# Install grub theme
+yay -S --noconfirm os-prober lsb-releas
+git clone https://github.com/vinceliuice/Elegant-grub2-themes.git
+cd Elegant-grub2-themes
+./install.sh -t mojave -p blur -i right -c dark -l system
+cd -
+rm -rf Elegant-grub2-themes

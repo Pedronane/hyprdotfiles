@@ -1942,7 +1942,7 @@ confirm_os_window_close 0
 #: The full list of actions that can be mapped to key presses is
 #: available here <https://sw.kovidgoyal.net/kitty/actions/>.
 
-# kitty_mod ctrl+shift
+#  kitty_mod alt
 
 #: Special modifier key alias for default shortcuts. You can change
 #: the value of this option to alter all default shortcuts that use
@@ -1986,7 +1986,7 @@ confirm_os_window_close 0
 #: Copy to clipboard
 
 # map kitty_mod+c copy_to_clipboard
-# map cmd+c       copy_to_clipboard
+map alt+c       copy_to_clipboard
 
 #::  There is also a copy_or_interrupt action that can be optionally
 #::  mapped to Ctrl+C. It will copy only if there is a selection and
@@ -1997,7 +1997,7 @@ confirm_os_window_close 0
 #: Paste from clipboard
 
 # map kitty_mod+v paste_from_clipboard
-# map cmd+v       paste_from_clipboard
+map alt+v       paste_from_clipboard
 
 #: Paste from selection
 
@@ -2028,14 +2028,14 @@ confirm_os_window_close 0
 #: Scroll line up
 
 # map kitty_mod+up    scroll_line_up
-# map kitty_mod+k     scroll_line_up
+map alt+k     scroll_line_up
 # map opt+cmd+page_up scroll_line_up
 # map cmd+up          scroll_line_up
 
 #: Scroll line down
 
 # map kitty_mod+down    scroll_line_down
-# map kitty_mod+j       scroll_line_down
+map alt+j       scroll_line_down
 # map opt+cmd+page_down scroll_line_down
 # map cmd+down          scroll_line_down
 
@@ -2345,24 +2345,15 @@ confirm_os_window_close 0
 
 #: Increase font size
 
-# map kitty_mod+equal  change_font_size all +2.0
-# map kitty_mod+plus   change_font_size all +2.0
-# map kitty_mod+kp_add change_font_size all +2.0
-# map cmd+plus         change_font_size all +2.0
-# map cmd+equal        change_font_size all +2.0
-# map shift+cmd+equal  change_font_size all +2.0
+map alt+shift+k  change_font_size all +2.0
 
 #: Decrease font size
 
-# map kitty_mod+minus       change_font_size all -2.0
-# map kitty_mod+kp_subtract change_font_size all -2.0
-# map cmd+minus             change_font_size all -2.0
-# map shift+cmd+minus       change_font_size all -2.0
+map alt+shift+j  change_font_size all -2.0
 
 #: Reset font size
 
-# map kitty_mod+backspace change_font_size all 0
-# map cmd+0               change_font_size all 0
+map alt+shift+0  change_font_size all 0
 
 
 #: To setup shortcuts for specific font sizes::
@@ -2644,7 +2635,7 @@ confirm_os_window_close 0
 #: }}}
 
 # BEGIN_KITTY_FONTS
-font_family      family="FiraCode Nerd Font Mono"
+font_family      family="0xProto Nerd Font Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

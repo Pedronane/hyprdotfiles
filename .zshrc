@@ -19,4 +19,6 @@ else
   export EDITOR='nvim'
 fi
 
-export QT_QPA_PLATFORMTHEME=qt5ct
+if [ -z "$TMUX" ]; then
+  tmux attach -d || tmux
+fi
