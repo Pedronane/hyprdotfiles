@@ -11,7 +11,7 @@ return {
                 show_devicons = true,
                 show_bufnr = false,
                 show_filename_only = true,
-                modified_italic = true,
+                modified_italic = false,
                 show_tabs_only = false,
             }
         }

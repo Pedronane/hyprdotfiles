@@ -22,3 +22,6 @@ fi
 if [ -z "$TMUX" ]; then
   tmux attach -d || tmux
 fi
+
+export EDITOR="nvim"
+export VISUAL="nvim" 

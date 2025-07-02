@@ -14,7 +14,7 @@ yay -S --noconfirm archlinux-keyring
 
 # Step 2: Install KVM and dependencies
 echo "[2/8] Installing KVM packages..."
-yay -S --noconfirm qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode ebtables iptables-nft libguestfs neovim
+yay -S --noconfirm qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode ebtables libguestfs neovim
 
 # Step 3: Enable and start libvirtd
 echo "[3/8] Enabling and starting libvirtd..."

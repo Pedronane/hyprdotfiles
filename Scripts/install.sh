@@ -15,16 +15,10 @@ rm -rf yay
 git clone https://github.com/Pedronane/Wallpapers $HOME/Pictures/Wallpapers
 
 # Install compositor and utilities
-yay --noconfirm -S hyprland waybar wofi swaync-client imv hypridle hyprpicker hyprlock grimblast wlogout brightnessctl nwg-look blueman bluez cliphist libnotify xdg-desktop-portal-hyprland hyprpolkitagent maplemono-nf-cn qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g zathura sddm
+yay --noconfirm -S hyprland waybar wofi nautilus swaync-client imv hypridle hyprpicker hyprlock grimblast wlogout brightnessctl nwg-look blueman bluez cliphist libnotify xdg-desktop-portal-hyprland hyprpolkitagent maplemono-nf-cn qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g zathura zathura-pdf-mupdf sddm wlsunset
 
 # Install terminal stuff
-yay --noconfirm -S starship neovim fd cava stow tmux zsh kitty yazi ripgrep fzf bat zoxide unzip fastfetch yarn man-db mpd rmpc
-
-# Start swww daemon
-swww-daemon &
-
-# Generate pywal colors and set wallpaper
-wal -i $HOME/Pictures/Wallpapers/Frieren-Dead-Stare.png
+yay --noconfirm -S starship neovim fd cava stow tmux zsh kitty yazi ripgrep fzf bat zoxide unzip fastfetch yarn man-db
 
 # Enable bluetooth and audio
 sudo systemctl enable bluetooth
@@ -34,12 +28,8 @@ systemctl --user start pipewire.service pipewire-pulse.service
 # Enable display manager
 sudo systemctl enable sddm.service
 
-# Install sddm theme
-git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM && cd SilentSDDM && ./install.sh
-rm -rf SilentSDDM
-
-# Enable mpd
-sudo systemctl enable mpd
+# Make Zathura default pdf viewer
+xdg-mime default org.pwmt.zathura.desktop application/pdf
 
 # Change shell
 chsh -s /usr/bin/zsh
@@ -47,8 +37,21 @@ chsh -s /usr/bin/zsh
 # Copy dotfiles
 stow .
 
+# Start swww daemon
+swww-daemon &
+
+# Generate pywal colors and set wallpaper
+wal -i $HOME/Pictures/Wallpapers/dark-academia-1.jpeg
+
 # Remove empty tmux plugins folders
 rm -rf $HOME/.confing/tmux/plugins/*
+
+cd $HOME
+
+# Install sddm theme
+git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM && cd SilentSDDM && ./install.sh
+cd -
+rm -rf SilentSDDM
 
 # Install grub theme
 yay -S --noconfirm os-prober lsb-releas
