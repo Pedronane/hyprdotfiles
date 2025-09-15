@@ -15,7 +15,7 @@ rm -rf yay
 git clone https://github.com/Pedronane/Wallpapers $HOME/Pictures/Wallpapers
 
 # Install compositor and utilities
-yay --noconfirm -S hyprland waybar wofi nautilus swaync-client imv hypridle hyprpicker hyprlock grimblast wlogout brightnessctl nwg-look blueman bluez cliphist libnotify xdg-desktop-portal-hyprland hyprpolkitagent maplemono-nf-cn qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g zathura zathura-pdf-mupdf sddm wlsunset python-pywalfox
+yay --noconfirm -S hyprland waybar wofi nautilus swaync-client imv hypridle hyprpicker hyprlock grimblast wlogout brightnessctl nwg-look blueman bluez cliphist libnotify xdg-desktop-portal-hyprland hyprpolkitagent maplemono-nf-cn qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g zathura zathura-pdf-mupdf sddm wlsunset python-pywalfox noto-fonts-emoji
 
 # Install terminal stuff
 yay --noconfirm -S starship neovim fd cava stow tmux zsh kitty yazi ripgrep fzf bat zoxide unzip fastfetch yarn man-db
