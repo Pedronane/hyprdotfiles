@@ -25,3 +25,5 @@ fi
 
 export EDITOR="nvim"
 export VISUAL="nvim" 
+
+export PATH=$PATH:/home/pietro/.spicetify
