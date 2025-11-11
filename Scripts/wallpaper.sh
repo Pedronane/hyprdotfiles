@@ -20,6 +20,8 @@ main() {
   ~/.config/waybar/refresh.sh
   cat ~/.cache/wal/colors-kitty.conf >~/.config/kitty/current-theme.conf
   cat ~/.cache/wal/colors.Xresources > ~/.Xresources
+  cp ~/.cache/wal/colors-gtk-4.0.css ~/.config/gtk-4.0/colors.css
+  nautilus -q
 
   color1=$(awk 'match($0, /color2=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)
   color2=$(awk 'match($0, /color3=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)

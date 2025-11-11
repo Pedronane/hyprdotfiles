@@ -25,7 +25,7 @@ include current-theme.conf
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-# font_size 16.0
+font_size 16.0
 
 #: Font size (in pts).
 
@@ -2635,9 +2635,9 @@ map alt+shift+0  change_font_size all 0
 #: }}}
 
 # BEGIN_KITTY_FONTS
-font_family      family="0xProto Nerd Font Mono"
+font_family      family="Maple Mono NF CN" style=Italic
 bold_font        auto
-italic_font      auto
+italic_font      family='Maple Mono NF CN' 
 bold_italic_font auto
 # END_KITTY_FONTS
 window_padding_width 5
