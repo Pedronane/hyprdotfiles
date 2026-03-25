@@ -38,7 +38,7 @@ yay --noconfirm -S \
   brightnessctl nwg-look blueman bluez cliphist libnotify \
   xdg-desktop-portal-hyprland hyprpolkitagent maplemono-nf-cn \
   qt5-wayland qt6-wayland pipewire pipewire-pulse pipewire-alsa \
-  pipewire-jack pulsemixer pywal swww zen-browser-bin ntfs-3g \
+  pipewire-jack pulsemixer pywal awww zen-browser-bin ntfs-3g \
   zathura zathura-pdf-mupdf sddm wlsunset python-pywalfox \
   noto-fonts-emoji torbrowser-launcher
 
