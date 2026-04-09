@@ -27,3 +27,4 @@ export EDITOR="nvim"
 export VISUAL="nvim" 
 
 export PATH=$PATH:/home/pietro/.spicetify
+export PATH="$HOME/.npm-global/bin:$PATH"
